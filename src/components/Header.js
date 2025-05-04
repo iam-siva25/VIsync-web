@@ -83,6 +83,16 @@ const Header = () => {
                 Solutions <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
               </button>
               <div className="dropdown-menu solutions-menu">
+
+              <Link to="/ai-labview-solutions" className="dropdown-card" onClick={scrollToTop}>
+  <div className="card-icon ai"></div>
+  <div className="card-content">
+    <h4>AI & Acceleration</h4>
+    <p>LabVIEW-integrated AI & hardware solutions</p>
+    <span className="card-cta">Learn More →</span>
+  </div>
+</Link>
+
                 <Link to="/digital-solutions" className="dropdown-card" onClick={scrollToTop}>
                   <div className="card-icon web-dev"></div>
                   <div className="card-content">
@@ -91,6 +101,7 @@ const Header = () => {
                     <span className="card-cta">Explore →</span>
                   </div>
                 </Link>
+
                 <Link to="/aerospace-tech" className="dropdown-card" onClick={scrollToTop}>
                   <div className="card-icon aerospace"></div>
                   <div className="card-content">
@@ -99,55 +110,13 @@ const Header = () => {
                     <span className="card-cta">Discover →</span>
                   </div>
                 </Link>
+               
+
               </div>
+              
             </li>
 
-            {/* Products Dropdown */}
-            <li
-              className={`nav-item dropdown ${productsOpen ? 'open' : ''}`}
-              ref={productsRef}
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
-            >
-              <button className="nav-link dropdown-btn" aria-expanded={productsOpen}>
-                Products <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
-              </button>
-              <div className="dropdown-menu products-menu">
-                <div className="products-grid">
-                  <Link to="/products/deep-ltk" className="product-card" onClick={scrollToTop}>
-                    <h4>DeepLTK</h4>
-                    <p>Deep Learning Toolkit</p>
-                    <div className="product-tag">AI/ML</div>
-                  </Link>
-                  <Link to="/products/culab" className="product-card" onClick={scrollToTop}>
-                    <h4>CuLab</h4>
-                    <p>GPU Toolkit for LabVIEW</p>
-                    <div className="product-tag">HPC</div>
-                  </Link>
-                  <Link to="/products/fpga-addon" className="product-card" onClick={scrollToTop}>
-                    <h4>DeepLTK FPGA</h4>
-                    <p>FPGA Acceleration Add-on</p>
-                    <div className="product-tag">Hardware</div>
-                  </Link>
-                  <Link to="/products/nnotate" className="product-card" onClick={scrollToTop}>
-                    <h4>NNotate</h4>
-                    <p>Image/Video Annotation Suite</p>
-                    <div className="product-tag">Computer Vision</div>
-                  </Link>
-                  <Link to="/products/bfdoa" className="product-card" onClick={scrollToTop}>
-                    <h4>BFDOA</h4>
-                    <p>Beamforming & Direction Finding</p>
-                    <div className="product-tag">Signal Processing</div>
-                  </Link>
-                  <Link to="/products/mic-array" className="product-card" onClick={scrollToTop}>
-                    <h4>Microphone Array</h4>
-                    <p>Advanced Acoustic Solutions</p>
-                    <div className="product-tag">Hardware</div>
-                  </Link>
-                </div>
-              </div>
-            </li>
-
+            
             <li className="nav-item">
               <Link to="/company" className="nav-link" onClick={scrollToTop}>
                 Company

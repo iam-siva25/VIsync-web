@@ -22,7 +22,11 @@ const AboutUs = () => {
           <div className="text-content">
             <h2 className="section-heading">Our Mission</h2>
             <p className="section-description">
-              At VI Web Sync, LabVIEW isn't just part of what we do — it’s the **foundation** of our engineering philosophy. Our mission is to make **LabVIEW smarter and faster** by integrating it with the latest in AI, embedded computing, and web technologies. Whether we're building intelligent test systems, deploying neural networks to FPGAs, or developing data-driven web platforms, LabVIEW remains at the core of everything we deliver.
+              At VI Web Sync, technology provider specializing in Artificial Intelligence. The software frameworks and intellectual properties developed by VI Web Sync enable research, development, optimization, and deployment of AI-powered systems for industrial applications.
+
+VI Web Sync offers a complete toolchain for building custom and efficient deep learning models—from data collection and annotation using NNotate, to neural network training and optimization with DeepLTK, and seamless deployment for inference across a range of hardware platforms including embedded CPUs, GPUs, and FPGAs.
+
+ LabVIEW isn't just part of what we do — it’s the **foundation** of our engineering philosophy. Our mission is to make **LabVIEW smarter and faster** by integrating it with the latest in AI, embedded computing, and web technologies. Whether we're building intelligent test systems, deploying neural networks to FPGAs, or developing data-driven web platforms, LabVIEW remains at the core of everything we deliver.
             </p>
             <div className="mission-points">
               <div className="mission-card">

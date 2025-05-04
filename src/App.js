@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs';
 import Aerospace from './components/WebServices';
 import IndustryServices from './components/industryServices';
 import Portfolio from './components/Portfolio';
+import AiLabviewServices from './components/AiLabviewServices';
 function App() {
   return (
     <div className="App">
@@ -50,6 +51,12 @@ function App() {
               <Footer />
             </>
           } />
+
+          <Route path="/ai-labview-solutions" element={  <>
+          <AiLabviewServices/>
+          </>
+          }/>
+
         </Routes>
       </main>
     </div>
