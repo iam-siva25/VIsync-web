@@ -17,6 +17,8 @@ const ContactForm = () => {
       if (result.success) {
         setStatus('Message sent successfully!');
         form.reset();
+        // Manual redirect to destination URL
+        window.location.href = 'https://www.viwebsync.com/';
       } else {
         setStatus('Error sending message. Please try again.');
       }
@@ -37,7 +39,7 @@ const ContactForm = () => {
         <input type="text" name="_honeypot" style={{ display: 'none' }} />
         <input type="hidden" name="_captcha" value="false" />
         <input type="hidden" name="source_url" value="https://viwebsync.com/start-now" />
-        <input type="hidden" name="_next" value="http://www.viwebsync.com/" />
+        <input type="hidden" name="_next" value="https://www.viwebsync.com/" />
         <button type="submit">Send Message</button>
       </form>
       {status && <p>{status}</p>}
