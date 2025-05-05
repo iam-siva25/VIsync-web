@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faLinkedinIn, faGithubAlt, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import '../styles/Footer.css';
 
 const Footer = () => {
+  const [status, setStatus] = useState('');
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/admin@viwebsync.com', {
+        method: 'POST',
+        body: data,
+      });
+      const result = await response.json();
+      if (result.success) {
+        setStatus('Subscribed successfully!');
+        form.reset();
+      } else {
+        setStatus('Error subscribing. Ensure the email is verified with FormSubmit.');
+      }
+    } catch (error) {
+      setStatus('Error subscribing. Check your network or FormSubmit configuration.');
+      console.error('Newsletter submission error:', error);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer-content container">
@@ -50,7 +75,7 @@ const Footer = () => {
           <ul className="contact-list">
             <li>
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-              <span>hello@viwebsync.com</span>
+              <span>admin@viwebsync.com</span>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className="contact-icon" />
@@ -58,7 +83,7 @@ const Footer = () => {
             </li>
             <li>
               <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-icon" />
-              <span>Mayiladuthurai,Tharangambadi, 609313</span>
+              <span>Mayiladuthurai, Tharangambadi, 609313</span>
             </li>
           </ul>
         </div>
@@ -69,17 +94,22 @@ const Footer = () => {
           <p className="newsletter-text">
             Subscribe for cutting-edge tech updates.
           </p>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="newsletter-form" onSubmit={handleNewsletterSubmit}>
             <input
               type="email"
+              name="email"
               placeholder="Your email address"
               className="newsletter-input"
               required
             />
+            <input type="text" name="_honeypot" style={{ display: 'none' }} />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://www.viwebsync.com/" />
             <button type="submit" className="newsletter-button">
               Join Now
             </button>
           </form>
+          {status && <p className="status-message">{status}</p>}
         </div>
       </div>
 

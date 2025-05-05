@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.css';
 import logo from '../assets/logo.png';
+import aiIcon from '../assets/ai.png';
+import webDevIcon from '../assets/web-dev-icon.png';
+import aerospaceIcon from '../assets/aerospace-icon.png';
 
 const Header = () => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const solutionsRef = useRef(null);
-  const productsRef = useRef(null);
   const headerRef = useRef(null);
 
   // Close dropdowns when clicking outside
@@ -18,9 +19,6 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
         setSolutionsOpen(false);
-      }
-      if (productsRef.current && !productsRef.current.contains(event.target)) {
-        setProductsOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -39,13 +37,11 @@ const Header = () => {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     setSolutionsOpen(false);
-    setProductsOpen(false);
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setSolutionsOpen(false);
-    setProductsOpen(false);
     setMobileMenuOpen(false);
   };
 
@@ -57,8 +53,8 @@ const Header = () => {
           <Link to="/" className="logo-link" onClick={scrollToTop}>
             <img src={logo} alt="Viwebsync Logo" className="logo-img" />
             <div className="logo-text-container">
-              <span className="logo-text-primary">Viwebsync</span>
-              <span className="logo-text-secondary">Next-Gen Tech Solutions</span>
+              <span className="logo-text-primary">VI Websync</span>
+             
             </div>
           </Link>
         </div>
@@ -83,51 +79,49 @@ const Header = () => {
                 Solutions <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
               </button>
               <div className="dropdown-menu solutions-menu">
-
-              <Link to="/ai-labview-solutions" className="dropdown-card" onClick={scrollToTop}>
-  <div className="card-icon ai"></div>
-  <div className="card-content">
-    <h4>AI & Acceleration</h4>
-    <p>LabVIEW-integrated AI & hardware solutions</p>
-    <span className="card-cta">Learn More →</span>
-  </div>
-</Link>
-
+                <Link to="/ai-labview-solutions" className="dropdown-card" onClick={scrollToTop}>
+                  <div className="card-icon ai">
+                    <img src={aiIcon} alt="AI Icon" className="card-icon-img" />
+                  </div>
+                  <div className="card-content">
+                    <h4>AI & DeepLearning</h4>
+                    <p>LabVIEW-integrated AI & hardware solutions</p>
+                    <span className="card-cta">Learn More →</span>
+                  </div>
+                </Link>
                 <Link to="/digital-solutions" className="dropdown-card" onClick={scrollToTop}>
-                  <div className="card-icon web-dev"></div>
+                  <div className="card-icon web-dev">
+                    <img src={webDevIcon} alt="Web Dev Icon" className="card-icon-img" />
+                  </div>
                   <div className="card-content">
                     <h4>Web Development</h4>
                     <p>Custom websites & applications</p>
                     <span className="card-cta">Explore →</span>
                   </div>
                 </Link>
-
                 <Link to="/aerospace-tech" className="dropdown-card" onClick={scrollToTop}>
-                  <div className="card-icon aerospace"></div>
+                  <div className="card-icon aerospace">
+                    <img src={aerospaceIcon} alt="Aerospace Icon" className="card-icon-img" />
+                  </div>
                   <div className="card-content">
                     <h4>Aerospace Solutions</h4>
                     <p>Missile & defense systems</p>
                     <span className="card-cta">Discover →</span>
                   </div>
                 </Link>
-               
-
               </div>
-              
             </li>
 
-            
             <li className="nav-item">
               <Link to="/company" className="nav-link" onClick={scrollToTop}>
                 Company
               </Link>
             </li>
             <li className="nav-item">
-  <Link to="/portfolio" className="nav-link" onClick={scrollToTop}>
-    Portfolio
-  </Link>
-</li>
-
+              <Link to="/portfolio" className="nav-link" onClick={scrollToTop}>
+                Portfolio
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to="/connect" className="nav-link" onClick={scrollToTop}>
                 Connect
@@ -157,7 +151,6 @@ const Header = () => {
             <Link to="/" className="mobile-nav-item" onClick={scrollToTop}>
               Home
             </Link>
-            
             <div className="mobile-dropdown-section">
               <button className="mobile-dropdown-btn" onClick={() => setSolutionsOpen(!solutionsOpen)}>
                 Solutions <FontAwesomeIcon icon={faChevronDown} className={`${solutionsOpen ? 'rotate' : ''}`} />
@@ -169,33 +162,20 @@ const Header = () => {
                 <Link to="/aerospace-tech" className="mobile-dropdown-item" onClick={scrollToTop}>
                   Aerospace Solutions
                 </Link>
+                <Link to="/ai-labview-solutions" className="mobile-dropdown-item" onClick={scrollToTop}>
+                  AI & DeepLearning
+                </Link>
               </div>
             </div>
-
-            <div className="mobile-dropdown-section">
-              <button className="mobile-dropdown-btn" onClick={() => setProductsOpen(!productsOpen)}>
-                Products <FontAwesomeIcon icon={faChevronDown} className={`${productsOpen ? 'rotate' : ''}`} />
-              </button>
-              <div className={`mobile-products-grid ${productsOpen ? 'open' : ''}`}>
-                <Link to="/products/deep-ltk" className="mobile-product-card" onClick={scrollToTop}>
-                  <h4>DeepLTK</h4>
-                  <p>Deep Learning Toolkit</p>
-                </Link>
-                <Link to="/products/culab" className="mobile-product-card" onClick={scrollToTop}>
-                  <h4>CuLab</h4>
-                  <p>GPU Toolkit for LabVIEW</p>
-                </Link>
-                {/* Other product cards */}
-              </div>
-            </div>
-
             <Link to="/company" className="mobile-nav-item" onClick={scrollToTop}>
               Company
+            </Link>
+            <Link to="/portfolio" className="mobile-nav-item" onClick={scrollToTop}>
+              Portfolio
             </Link>
             <Link to="/connect" className="mobile-nav-item" onClick={scrollToTop}>
               Connect
             </Link>
-            
             <Link to="/start-now" className="mobile-cta-button" onClick={scrollToTop}>
               Start Project
             </Link>

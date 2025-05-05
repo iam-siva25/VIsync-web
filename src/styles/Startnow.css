@@ -1,0 +1,191 @@
+/* Importing Inter font to match Home.css, Footer.css, AboutUs.css, IndustryServices.css, Portfolio.css, and ContactForm.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Startnow page container */
+.startnow-container {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.2), rgba(59, 130, 246, 0.1)), url('../assets/Deep-Learning.gif'), url('../assets/Deep-Learning.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  image-rendering: auto;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Startnow heading */
+.startnow-container h2 {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Startnow form */
+.startnow-form {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* Form inputs */
+.startnow-form input,
+.startnow-form textarea,
+.startnow-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.5);
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.startnow-form select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2360a5fa%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.9%205.4%2012.9%205.4s9.3-1.8%2012.9-5.4L287%2095.1c3.6-3.6%205.4-7.9%205.4-12.9%200-5-1.8-9.3-5.4-12.9z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+}
+
+.startnow-form input:focus,
+.startnow-form textarea:focus,
+.startnow-form select:focus {
+  outline: none;
+  border-color: #60a5fa;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.startnow-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.startnow-form input::placeholder,
+.startnow-form textarea::placeholder {
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+/* Submit button */
+.startnow-form button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #7e22ce);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.startnow-form button:hover {
+  background: linear-gradient(135deg, #2563eb, #6b21a8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Status message */
+.status-message {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #60a5fa;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .startnow-container {
+    padding: 3rem 0;
+  }
+
+  .startnow-container h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .startnow-form {
+    padding: 1.5rem;
+  }
+
+  .startnow-form input,
+  .startnow-form textarea,
+  .startnow-form select {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+
+  .startnow-form button {
+    font-size: 0.9rem;
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .startnow-container {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .startnow-form {
+    padding: 1rem;
+  }
+
+  .startnow-form input,
+  .startnow-form textarea,
+  .startnow-form select {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .startnow-form button {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,11 +13,12 @@ import { faImage, faObjectGroup, faMicrophoneAlt, faChartLine } from '@fortaweso
 import TestSolutionsImage from '../assets/test-automation.jpg';
 import EmbeddedSystemsImage from '../assets/embedded-systems.png';
 import WebApplicationsImage from '../assets/web-design1.jpg';
-// Update your import statements at the top of the Home component
-import DataCollectionImage from '../assets/data-collection.jpg'; // Add this
-import TrainingImage from '../assets/training.jpg'; // Add this
-import OptimizationImage from '../assets/optimization.jpg'; // Add this
-import DeploymentImage from '../assets/deployment.jpg'; // Add this
+import DataCollectionImage from '../assets/data-collection.jpg';
+import TrainingImage from '../assets/training.jpg';
+import OptimizationImage from '../assets/optimization.jpg';
+import DeploymentImage from '../assets/deployment.jpg';
+import AIImage from '../assets/ai.jpg';
+import DeepLearningImage from '../assets/Deep-Learning.jpg';
 
 import '../styles/Home.css';
 
@@ -45,123 +47,109 @@ const Home = () => {
     setExpandedCard(expandedCard === cardId ? null : cardId);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <main className="home-container">
-      
       {/* Hero Section */}
-      <section className="hero relative overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900 py-20">
-  <div className="container mx-auto px-4 relative z-10">
-    <div className="max-w-4xl mx-auto text-center">
-      <div className="mb-6">
-        <span className="hero-subtitle text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Embedded | Web | Test Solutions
-        </span>
-      </div>
-      <h1 className="hero-title text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-        MAKING LabVIEW <br /> SMARTER and FASTER
-      </h1>
-      <p className="hero-subtitle text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-        From embedded platforms to enterprise web solutions and automated test systems, we deliver precision-built technology for modern industry.
-      </p>
-      <div className="hero-cta-container">
-        <button className="hero-cta">
-          <span>Explore Our Services</span>
-          <FontAwesomeIcon icon={faRocket} className="hero-cta-icon" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <div className="absolute inset-0 z-0 opacity-20">
-    <div className="absolute w-96 h-96 bg-blue-500/30 rounded-full blur-3xl -top-48 -left-48"></div>
-    <div className="absolute w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl -bottom-48 -right-48"></div>
-  </div>
-</section>
+      <section className="hero relative min-h-screen">
+        <div className="hero-content">
+          <div className="subtitle-container">
+            <span className="hero-subtitle">Embedded | Web | Test Solutions</span>
+          </div>
+          <h1 className="hero-title">
+            MAKING LabVIEW <br /> SMARTER and FASTER
+          </h1>
+          <p className="hero-description">
+            From embedded platforms to enterprise web solutions and automated test systems, we deliver precision-built technology for modern industry.
+          </p>
+        </div>
+      </section>
 
       {/* Industry Expertise Section */}
       <section className="industry-expertise">
         <div className="container">
           <h2 className="section-title">What We Specialize In</h2>
           <div className="industry-grid">
-
-
             {/* Deep Learning Toolchain Section */}
-<div className="industry-card">
-  <div className="industry-image">
-    <img src={DataCollectionImage} alt="Data Collection & Annotation" loading="lazy" />
-  </div>
-  <div className="industry-content">
-    <h3>1. Data Collection & Annotation</h3>
-    <p className={expandedCard === 'data' ? 'expanded' : ''}>
-      {expandedCard === 'data' ? (
-        <>Capture, clean, and annotate datasets with our LabVIEW-integrated tools like NNotate. Streamline your image, signal, or sensor data preparation for deep learning workflows.</>
-      ) : (
-        "LabVIEW-integrated tools for collecting and annotating data efficiently..."
-      )}
-    </p>
-    <button className="read-more" onClick={() => handleExpand('data')}>
-      {expandedCard === 'data' ? "Show Less" : "Read More"}
-    </button>
-  </div>
-</div>
+            <div className="industry-card">
+              <div className="industry-image">
+                <img src={DataCollectionImage} alt="Data Collection & Annotation" loading="lazy" />
+              </div>
+              <div className="industry-content">
+                <h3>1. Data Collection & Annotation</h3>
+                <p className={expandedCard === 'data' ? 'expanded' : ''}>
+                  {expandedCard === 'data' ? (
+                    <>Capture, clean, and annotate datasets with our LabVIEW-integrated tools like NNotate. Streamline your image, signal, or sensor data preparation for deep learning workflows.</>
+                  ) : (
+                    "LabVIEW-integrated tools for collecting and annotating data efficiently..."
+                  )}
+                </p>
+                <button className="read-more" onClick={() => handleExpand('data')}>
+                  {expandedCard === 'data' ? "Show Less" : "Read More"}
+                </button>
+              </div>
+            </div>
 
-<div className="industry-card">
-  <div className="industry-image">
-    <img src={TrainingImage} alt="Network Training" loading="lazy" />
-  </div>
-  <div className="industry-content">
-    <h3>2. Network Training</h3>
-    <p className={expandedCard === 'training' ? 'expanded' : ''}>
-      {expandedCard === 'training' ? (
-        <>Train deep neural networks directly using LabVIEW with DeepLTK. Integrate Python-based model training pipelines and visualize progress in real time.</>
-      ) : (
-        "Train models with DeepLTK, integrating Python and LabVIEW seamlessly..."
-      )}
-    </p>
-    <button className="read-more" onClick={() => handleExpand('training')}>
-      {expandedCard === 'training' ? "Show Less" : "Read More"}
-    </button>
-  </div>
-</div>
+            <div className="industry-card">
+              <div className="industry-image">
+                <img src={TrainingImage} alt="Network Training" loading="lazy" />
+              </div>
+              <div className="industry-content">
+                <h3>2. Network Training</h3>
+                <p className={expandedCard === 'training' ? 'expanded' : ''}>
+                  {expandedCard === 'training' ? (
+                    <>Train deep neural networks directly using LabVIEW with DeepLTK. Integrate Python-based model training pipelines and visualize progress in real time.</>
+                  ) : (
+                    "Train models with DeepLTK, integrating Python and LabVIEW seamlessly..."
+                  )}
+                </p>
+                <button className="read-more" onClick={() => handleExpand('training')}>
+                  {expandedCard === 'training' ? "Show Less" : "Read More"}
+                </button>
+              </div>
+            </div>
 
-<div className="industry-card">
-  <div className="industry-image">
-    <img src={OptimizationImage} alt="Optimization & Quantization" loading="lazy" />
-  </div>
-  <div className="industry-content">
-    <h3>3. Optimization & Quantization</h3>
-    <p className={expandedCard === 'optimize' ? 'expanded' : ''}>
-      {expandedCard === 'optimize' ? (
-        <>Leverage CuLab to optimize and quantize trained models for speed and memory. Target FPGA, GPU, or CPU efficiently without leaving the LabVIEW environment.</>
-      ) : (
-        "Use CuLab to optimize and quantize models for efficient deployment..."
-      )}
-    </p>
-    <button className="read-more" onClick={() => handleExpand('optimize')}>
-      {expandedCard === 'optimize' ? "Show Less" : "Read More"}
-    </button>
-  </div>
-</div>
+            <div className="industry-card">
+              <div className="industry-image">
+                <img src={OptimizationImage} alt="Optimization & Quantization" loading="lazy" />
+              </div>
+              <div className="industry-content">
+                <h3>3. Optimization & Quantization</h3>
+                <p className={expandedCard === 'optimize' ? 'expanded' : ''}>
+                  {expandedCard === 'optimize' ? (
+                    <>Leverage CuLab to optimize and quantize trained models for speed and memory. Target FPGA, GPU, or CPU efficiently without leaving the LabVIEW environment.</>
+                  ) : (
+                    "Use CuLab to optimize and quantize models for efficient deployment..."
+                  )}
+                </p>
+                <button className="read-more" onClick={() => handleExpand('optimize')}>
+                  {expandedCard === 'optimize' ? "Show Less" : "Read More"}
+                </button>
+              </div>
+            </div>
 
-<div className="industry-card">
-  <div className="industry-image">
-    <img src={DeploymentImage} alt="Deployment for Inference" loading="lazy" />
-  </div>
-  <div className="industry-content">
-    <h3>4. Deployment for Inference</h3>
-    <p className={expandedCard === 'deploy' ? 'expanded' : ''}>
-      {expandedCard === 'deploy' ? (
-        <>Deploy neural networks to real-time targets including FPGAs and embedded systems. Our toolchain simplifies model conversion and runtime integration with LabVIEW.</>
-      ) : (
-        "Deploy models to FPGA and embedded targets using LabVIEW-based runtime..."
-      )}
-    </p>
-    <button className="read-more" onClick={() => handleExpand('deploy')}>
-      {expandedCard === 'deploy' ? "Show Less" : "Read More"}
-    </button>
-  </div>
-</div>
+            <div className="industry-card">
+              <div className="industry-image">
+                <img src={DeploymentImage} alt="Deployment for Inference" loading="lazy" />
+              </div>
+              <div className="industry-content">
+                <h3>4. Deployment for Inference</h3>
+                <p className={expandedCard === 'deploy' ? 'expanded' : ''}>
+                  {expandedCard === 'deploy' ? (
+                    <>Deploy neural networks to real-time targets including FPGAs and embedded systems. Our toolchain simplifies model conversion and runtime integration with LabVIEW.</>
+                  ) : (
+                    "Deploy models to FPGA and embedded targets using LabVIEW-based runtime..."
+                  )}
+                </p>
+                <button className="read-more" onClick={() => handleExpand('deploy')}>
+                  {expandedCard === 'deploy' ? "Show Less" : "Read More"}
+                </button>
+              </div>
+            </div>
 
-   
             {/* Embedded Systems */}
             <div className="industry-card">
               <div className="industry-image">
@@ -221,43 +209,40 @@ const Home = () => {
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* Solutions Section */}
       <section className="solutions">
-
-
         {/* Applications Section */}
-<section className="solutions applications">
-  <div className="container">
-    <h2 className="section-title">Deep Learning Applications</h2>
-    <div className="solutions-grid">
-      <div className="solution-card">
-        <FontAwesomeIcon icon={faImage} className="solution-icon" />
-        <h3>Image Classification</h3>
-        <p>Automatically categorize images into predefined classes using deep learning models. Ideal for defect detection, medical imaging, quality control, and more. Integrates seamlessly into LabVIEW-based inspection systems.</p>
-      </div>
-      <div className="solution-card">
-        <FontAwesomeIcon icon={faObjectGroup} className="solution-icon" />
-        <h3>Object Detection</h3>
-        <p>Locate and identify multiple objects within images or video frames in real time. Enable precision tracking for industrial automation, robotics, security, and smart systems — fully supported by Ngene's CuLab and FPGA acceleration.</p>
-      </div>
-      <div className="solution-card">
-        <FontAwesomeIcon icon={faMicrophoneAlt} className="solution-icon" />
-        <h3>Voice Recognition</h3>
-        <p>Convert spoken language into text or commands using powerful neural networks. Build intelligent voice-based HMI systems, audio classification tools, or embedded voice assistants — directly inside your LabVIEW workflows.</p>
-      </div>
-      <div className="solution-card">
-        <FontAwesomeIcon icon={faChartLine} className="solution-icon" />
-        <h3>Time Series Prediction</h3>
-        <p>Predict future trends from sequential sensor or signal data using RNNs and LSTMs. Ideal for condition monitoring, predictive maintenance, and control system optimization in embedded environments.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <section className="solutions applications">
+          <div className="container">
+            <h2 className="section-title">Deep Learning Applications</h2>
+            <div className="solutions-grid">
+              <div className="solution-card">
+                <FontAwesomeIcon icon={faImage} className="solution-icon" />
+                <h3>Image Classification</h3>
+                <p>Automatically categorize images into predefined classes using deep learning models. Ideal for defect detection, medical imaging, quality control, and more. Integrates seamlessly into LabVIEW-based inspection systems.</p>
+              </div>
+              <div className="solution-card">
+                <FontAwesomeIcon icon={faObjectGroup} className="solution-icon" />
+                <h3>Object Detection</h3>
+                <p>Locate and identify multiple objects within images or video frames in real time. Enable precision tracking for industrial automation, robotics, security, and smart systems — fully supported by Ngene's CuLab and FPGA acceleration.</p>
+              </div>
+              <div className="solution-card">
+                <FontAwesomeIcon icon={faMicrophoneAlt} className="solution-icon" />
+                <h3>Voice Recognition</h3>
+                <p>Convert spoken language into text or commands using powerful neural networks. Build intelligent voice-based HMI systems, audio classification tools, or embedded voice assistants — directly inside your LabVIEW workflows.</p>
+              </div>
+              <div className="solution-card">
+                <FontAwesomeIcon icon={faChartLine} className="solution-icon" />
+                <h3>Time Series Prediction</h3>
+                <p>Predict future trends from sequential sensor or signal data using RNNs and LSTMs. Ideal for condition monitoring, predictive maintenance, and control system optimization in embedded environments.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div className="container">
           <h2 className="section-title">Technical Services We Offer</h2>
@@ -297,9 +282,9 @@ const Home = () => {
       </section>
 
       {/* Metrics Section */}
-<section className="metrics" ref={metricsRef}>
+      <section className="metrics" ref={metricsRef}>
         <div className="container">
-                <h2 className="section-title">Our Track Record</h2>
+          <h2 className="section-title">Our Track Record</h2>
           <div className="metrics-grid">
             <div className="metric-card">
               <FontAwesomeIcon icon={faIndustry} className="metric-icon" />
@@ -325,7 +310,9 @@ const Home = () => {
         <div className="cta-content">
           <h2>Ready to Start Your Project?</h2>
           <p>We partner with you from design to deployment. Let’s build something powerful together.</p>
-          <button className="cta-button primary">Contact Our Experts</button>
+          <Link to="/start-now" className="cta-button primary" onClick={scrollToTop}>
+            Contact Our Experts
+          </Link>
         </div>
       </section>
     </main>
