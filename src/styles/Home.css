@@ -1,0 +1,444 @@
+/* Importing modern Google Fonts for typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0f172a; /* Fallback background */
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.2), rgba(59, 130, 246, 0.1)), url('../assets/Deep-Learning.gif'), url('../assets/Deep-Learning.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fixed background for full-page effect */
+  image-rendering: auto; /* Optimize clarity */
+}
+
+/* Utility classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.hero-content {
+  max-width: 64rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.hero-content .subtitle-container {
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #e5e7eb;
+  display: block;
+  max-width: 48rem;
+  margin: 0 auto 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #a5b4fc, #60a5fa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #e5e7eb;
+  margin-bottom: 2.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-container {
+  margin-top: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #7e22ce);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(135deg, #2563eb, #6b21a8);
+}
+
+.hero-cta-icon {
+  font-size: 1.25rem;
+}
+
+
+
+/* Industry Expertise Section */
+.industry-expertise {
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.industry-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-10px) rotate(-1deg);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.industry-image img {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.industry-card:hover .industry-image img {
+  transform: scale(1.1);
+}
+
+.industry-content {
+  padding: 2rem;
+}
+
+.industry-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #a5b4fc;
+}
+
+.industry-content p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e5e7eb;
+  line-height: 1.6;
+  max-height: 5rem;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.industry-content p.expanded {
+  max-height: 25rem;
+}
+
+.read-more {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #60a5fa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more:hover {
+  color: #a5b4fc;
+  transform: translateX(5px);
+}
+
+/* Solutions Section */
+.solutions {
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.solution-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.solution-icon {
+  font-size: 2.5rem;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+  transition: transform 0.4s ease;
+}
+
+.solution-card:hover .solution-icon {
+  transform: rotate(360deg);
+}
+
+.solution-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.solution-card p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e5e7eb;
+}
+
+/* Applications Section */
+.applications {
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+/* Metrics Section */
+.metrics {
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 1s backwards;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.metric-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.metric-icon {
+  font-size: 3rem;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+}
+
+.metric-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.metric-label {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #e5e7eb;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #7e22ce);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  text-align: center;
+  animation: fadeInUp 1s ease-out 1.2s backwards;
+}
+
+.cta-content h2 {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #e5e7eb;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button.primary {
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #7e22ce);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(135deg, #2563eb, #6b21a8);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .industry-image img {
+    height: 12rem;
+  }
+
+  .ai-card img {
+    height: 18rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .hero-cta, .cta-button.primary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .metric-number {
+    font-size: 2.5rem;
+  }
+
+  .hero-content, .ai-showcase, .industry-expertise, .solutions, .applications, .metrics, .cta-section {
+    padding: 4rem 1rem;
+  }
+}
