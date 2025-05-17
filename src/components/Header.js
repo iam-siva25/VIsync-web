@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Header.css';
-import labviewIcon from '../assets/labview-icon.png';
+import logo from '../assets/logo.png';
+import aiIcon from '../assets/ai.png';
 import webDevIcon from '../assets/web-dev-icon.png';
-import logo from '../assets/logo.png'; // Added import for logo.png
+import aerospaceIcon from '../assets/aerospace-icon.png';
 
 const Header = () => {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const solutionsRef = useRef(null);
   const headerRef = useRef(null);
-  const navigate = useNavigate();
 
-  // Handle clicks outside to close dropdown
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (solutionsRef.current && !solutionsRef.current.contains(event.target)) {
@@ -25,7 +25,7 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Handle scroll to toggle header style
+  // Header scroll effect
   useEffect(() => {
     const handleScroll = () => {
       headerRef.current.classList.toggle('scrolled', window.scrollY > 50);
@@ -34,125 +34,109 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Log solutions dropdown state for debugging
-  useEffect(() => {
-    console.log('Solutions dropdown state:', solutionsOpen);
-  }, [solutionsOpen]);
-
-  // Toggle mobile menu
   const toggleMobileMenu = () => {
-    console.log('Toggling mobile menu, current state:', mobileMenuOpen);
-    setMobileMenuOpen((prev) => {
-      if (!prev) {
-        setSolutionsOpen(false); // Close solutions dropdown when opening mobile menu
-      }
-      return !prev;
-    });
+    setMobileMenuOpen(!mobileMenuOpen);
+    setSolutionsOpen(false);
   };
 
-  // Toggle solutions dropdown
-  const toggleSolutionsDropdown = () => {
-    console.log('Toggling solutions dropdown, current state:', solutionsOpen);
-    setSolutionsOpen((prev) => !prev);
-  };
-
-  // Handle navigation
-  const handleNavClick = (path) => {
-    console.log('Navigating to:', path);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setSolutionsOpen(false);
     setMobileMenuOpen(false);
-    navigate(path);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className="header" ref={headerRef}>
       <div className="header-container">
+        {/* Logo Section */}
         <div className="logo-container">
-          <Link to="/" className="logo-link" onClick={() => handleNavClick('/')} aria-label="Viwebsync Homepage">
-            <img src={logo} alt="Viwebsync Logo" className="logo" />
+          <Link to="/" className="logo-link" onClick={scrollToTop}>
+            <img src={logo} alt="Viwebsync Logo" className="logo-img" />
+            <div className="logo-text-container">
+              <span className="logo-text-primary">VI Websync</span>
+             
+            </div>
           </Link>
         </div>
 
+        {/* Desktop Navigation */}
         <nav className="desktop-nav">
           <ul className="nav-list">
             <li className="nav-item">
-              <Link to="/" className="nav-link" onClick={() => handleNavClick('/')}>
+              <Link to="/" className="nav-link" onClick={scrollToTop}>
                 Home
               </Link>
             </li>
+
+            {/* Solutions Dropdown */}
             <li
               className={`nav-item dropdown ${solutionsOpen ? 'open' : ''}`}
               ref={solutionsRef}
               onMouseEnter={() => setSolutionsOpen(true)}
               onMouseLeave={() => setSolutionsOpen(false)}
             >
-              <button
-                className="dropdown-btn"
-                onClick={toggleSolutionsDropdown}
-                aria-expanded={solutionsOpen}
-              >
+              <button className="nav-link dropdown-btn" aria-expanded={solutionsOpen}>
                 Solutions <FontAwesomeIcon icon={faChevronDown} className="dropdown-icon" />
               </button>
               <div className="dropdown-menu solutions-menu">
-                <Link
-                  to="/labview"
-                  className="dropdown-card"
-                  onClick={() => handleNavClick('/labview')}
-                >
-                  <div className="card-icon labview">
-                    <img src={labviewIcon} alt="LabVIEW Icon" className="card-icon-img" loading="lazy" />
+                <Link to="/ai-labview-solutions" className="dropdown-card" onClick={scrollToTop}>
+                  <div className="card-icon ai">
+                    <img src={aiIcon} alt="AI Icon" className="card-icon-img" />
                   </div>
                   <div className="card-content">
-                    <h4>LabVIEW Solutions</h4>
-                    <p>Automation, testing, and data acquisition</p>
+                    <h4>AI & DeepLearning</h4>
+                    <p>LabVIEW-integrated AI & hardware solutions</p>
+                    <span className="card-cta">Learn More →</span>
+                  </div>
+                </Link>
+                <Link to="/digital-solutions" className="dropdown-card" onClick={scrollToTop}>
+                  <div className="card-icon web-dev">
+                    <img src={webDevIcon} alt="Web Dev Icon" className="card-icon-img" />
+                  </div>
+                  <div className="card-content">
+                    <h4>Web Development</h4>
+                    <p>Custom websites & applications</p>
                     <span className="card-cta">Explore →</span>
                   </div>
                 </Link>
-                <Link
-                  to="/web-development"
-                  className="dropdown-card"
-                  onClick={() => handleNavClick('/web-development')}
-                >
-                  <div className="card-icon web-dev">
-                    <img src={webDevIcon} alt="Web Dev Icon" className="card-icon-img" loading="lazy" />
+                <Link to="/aerospace-tech" className="dropdown-card" onClick={scrollToTop}>
+                  <div className="card-icon aerospace">
+                    <img src={aerospaceIcon} alt="Aerospace Icon" className="card-icon-img" />
                   </div>
                   <div className="card-content">
-                    <h4>IT Services</h4>
-                    <p>Custom websites, apps & e-commerce</p>
-                    <span className="card-cta">Explore →</span>
+                    <h4>Aerospace Solutions</h4>
+                    <p>Missile & defense systems</p>
+                    <span className="card-cta">Discover →</span>
                   </div>
                 </Link>
               </div>
             </li>
+
             <li className="nav-item">
-              <Link to="/company" className="nav-link" onClick={() => handleNavClick('/company')}>
+              <Link to="/company" className="nav-link" onClick={scrollToTop}>
                 Company
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/portfolio" className="nav-link" onClick={() => handleNavClick('/portfolio')}>
+              <Link to="/portfolio" className="nav-link" onClick={scrollToTop}>
                 Portfolio
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/blog" className="nav-link" onClick={() => handleNavClick('/blog')}>
-                Blog
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/connect" className="nav-link" onClick={() => handleNavClick('/connect')}>
+              <Link to="/connect" className="nav-link" onClick={scrollToTop}>
                 Connect
               </Link>
             </li>
           </ul>
         </nav>
 
-        <Link to="/start-now" className="cta-button" onClick={() => handleNavClick('/start-now')}>
-          Kickstart
+        {/* CTA Button */}
+        <Link to="/start-now" className="cta-button" onClick={scrollToTop}>
+          Start Project
           <span className="cta-hover-effect"></span>
         </Link>
 
+        {/* Mobile Menu Button */}
         <button
           className="mobile-menu-btn"
           onClick={toggleMobileMenu}
@@ -161,54 +145,39 @@ const Header = () => {
           <FontAwesomeIcon icon={mobileMenuOpen ? faTimes : faBars} />
         </button>
 
+        {/* Mobile Navigation */}
         <div className={`mobile-nav ${mobileMenuOpen ? 'open' : ''}`}>
           <div className="mobile-nav-content">
-            <Link to="/" className="mobile-nav-item" onClick={() => handleNavClick('/')}>
+            <Link to="/" className="mobile-nav-item" onClick={scrollToTop}>
               Home
             </Link>
             <div className="mobile-dropdown-section">
-              <button
-                className="mobile-dropdown-btn"
-                onClick={toggleSolutionsDropdown}
-                aria-expanded={solutionsOpen}
-                aria-controls="mobile-solutions-menu"
-              >
-                Solutions <FontAwesomeIcon icon={faChevronDown} className={`dropdown-icon ${solutionsOpen ? 'rotate' : ''}`} />
+              <button className="mobile-dropdown-btn" onClick={() => setSolutionsOpen(!solutionsOpen)}>
+                Solutions <FontAwesomeIcon icon={faChevronDown} className={`${solutionsOpen ? 'rotate' : ''}`} />
               </button>
-              <div
-                id="mobile-solutions-menu"
-                className={`mobile-dropdown-menu ${solutionsOpen ? 'open' : ''}`}
-              >
-                <Link
-                  to="/labview"
-                  className="mobile-dropdown-item"
-                  onClick={() => handleNavClick('/labview')}
-                >
-                  LabVIEW Solutions
+              <div className={`mobile-dropdown-menu ${solutionsOpen ? 'open' : ''}`}>
+                <Link to="/digital-solutions" className="mobile-dropdown-item" onClick={scrollToTop}>
+                  Web Development
                 </Link>
-                <Link
-                  to="/web-development"
-                  className="mobile-dropdown-item"
-                  onClick={() => handleNavClick('/web-development')}
-                >
-                  IT Services
+                <Link to="/aerospace-tech" className="mobile-dropdown-item" onClick={scrollToTop}>
+                  Aerospace Solutions
+                </Link>
+                <Link to="/ai-labview-solutions" className="mobile-dropdown-item" onClick={scrollToTop}>
+                  AI & DeepLearning
                 </Link>
               </div>
             </div>
-            <Link to="/company" className="mobile-nav-item" onClick={() => handleNavClick('/company')}>
+            <Link to="/company" className="mobile-nav-item" onClick={scrollToTop}>
               Company
             </Link>
-            <Link to="/portfolio" className="mobile-nav-item" onClick={() => handleNavClick('/portfolio')}>
+            <Link to="/portfolio" className="mobile-nav-item" onClick={scrollToTop}>
               Portfolio
             </Link>
-            <Link to="/blog" className="mobile-nav-item" onClick={() => handleNavClick('/blog')}>
-              Blog
-            </Link>
-            <Link to="/connect" className="mobile-nav-item" onClick={() => handleNavClick('/connect')}>
+            <Link to="/connect" className="mobile-nav-item" onClick={scrollToTop}>
               Connect
             </Link>
-            <Link to="/start-now" className="mobile-cta-button" onClick={() => handleNavClick('/start-now')}>
-              Kickstart
+            <Link to="/start-now" className="mobile-cta-button" onClick={scrollToTop}>
+              Start Project
             </Link>
           </div>
         </div>

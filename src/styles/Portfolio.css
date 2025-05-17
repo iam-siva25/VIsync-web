@@ -1,125 +1,179 @@
-/* Portfolio.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Importing Inter font to match Home.css, Footer.css, AboutUs.css, and industryServices.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+/* Portfolio page container */
 .portfolio-section {
-  font-family: 'Arial', sans-serif;
-  color: #333333;
-  background-color: #ffffff;
-  padding: 60px 20px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.portfolio-section h2 {
-  font-size: 2rem;
-  color: #28a745;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.portfolio-text {
-  font-size: 1.2rem;
-  color: #6c757d;
-  text-align: center;
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background-color: #e6f4ea;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-tag {
-  display: inline-block;
-  background-color: #28a745;
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.2), rgba(59, 130, 246, 0.1)), url('../assets/Deep-Learning.gif'), url('../assets/Deep-Learning.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fixed background to match Home.css */
+  image-rendering: auto; /* Optimize clarity */
+  font-family: 'Inter', sans-serif;
   color: #ffffff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  padding: 4rem 0;
 }
 
-.project-title {
-  font-size: 1.5rem;
-  color: #333333;
-  margin-bottom: 10px;
+/* Utility classes */
+.container {
+  max-width: 1280px; /* Matches Home.css container */
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.project-description {
-  font-size: 1rem;
-  color: #6c757d;
-  margin-bottom: 10px;
+/* Fade-in animation to match Home.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.project-status {
-  font-size: 0.9rem;
-  color: #28a745;
-  margin-bottom: 15px;
+/* Portfolio heading */
+.portfolio-section h2 {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc); /* Matches Home.css */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeInUp 1s ease-out;
 }
 
-.project-cta {
-  color: #28a745;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+/* Portfolio image */
+.portfolio-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
-.project-cta:hover {
-  color: #333333;
+/* Portfolio text */
+.portfolio-text {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #e5e7eb; /* Matches Home.css text-gray-200 */
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
+/* Portfolio list */
 .portfolio-list {
   list-style: none;
-  font-size: 1rem;
-  color: #6c757d;
-  text-align: center;
-  margin: 40px 0;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease-out 0.6s backwards;
 }
 
 .portfolio-list li {
-  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a5b4fc; /* Matches Home.css headings */
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease;
 }
 
+.portfolio-list li:last-child {
+  border-bottom: none;
+}
+
+.portfolio-list li:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* Portfolio note */
 .portfolio-note {
   font-size: 1rem;
-  color: #6c757d;
+  font-weight: 300;
+  color: #e5e7eb;
   text-align: center;
+  animation: fadeInUp 1s ease-out 0.8s backwards;
 }
 
 .portfolio-note a {
-  color: #28a745;
+  color: #60a5fa;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .portfolio-note a:hover {
-  color: #333333;
+  color: #3b82f6;
+  text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .portfolio-section h2 {
-    font-size: 1.8rem;
+  .portfolio-section {
+    padding: 3rem 0;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
+  .portfolio-section h2 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .portfolio-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .portfolio-list li {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .portfolio-note {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-section {
+    padding: 2rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .portfolio-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .portfolio-text {
+    font-size: 0.875rem;
+  }
+
+  .portfolio-list li {
+    font-size: 0.875rem;
+  }
+
+  .portfolio-note {
+    font-size: 0.875rem;
   }
 }
