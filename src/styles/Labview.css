@@ -1,0 +1,352 @@
+/* Labview.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.labview-services-page {
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+  background-color: #d3edcb;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex; /* Use flexbox for vertical centering */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; /* Ensure enough height for content */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%; /* Ensure container takes full width within padding */
+}
+.hero-title{
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2; /* Improve readability */
+}
+
+.hero-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between graphic and text */
+  margin-bottom: 30px; /* Space between logo and title */
+}
+
+.hero-logo-graphic {
+  width: 50px; /* Slightly larger than header for prominence */
+  height: 50px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+  animation: logoFadeIn 1s ease-out;
+}
+
+.hero-logo-text {
+  width: 130px; /* Slightly larger than header */
+  height: 35px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  transition: transform 0.3s ease;
+  animation: logoFadeIn 1s ease-out;
+}
+
+.hero-logo-graphic:hover,
+.hero-logo-text:hover {
+  transform: scale(1.05);
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  line-height: 1.2; /* Improve readability */
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px; /* Added bottom margin for spacing */
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #28a745;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-cta:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Services/Categories Section */
+.services-section, .categories-section {
+  padding: 60px 20px;
+  background-color: #e6f4ea;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.category-section {
+  margin-top: 40px;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.service-tag {
+  display: inline-block;
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.service-benefits {
+  list-style: none;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.service-benefits li {
+  margin: 5px 0;
+}
+
+.service-cta {
+  display: inline-block;
+  color: #1a6b2d; /* Darker green for better contrast */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.service-cta:hover {
+  color: #333333;
+}
+
+/* Fallback for Custom "Learn More" Links */
+.learn-more {
+  display: inline-block;
+  color: #1a6b2d; /* Darker green for contrast */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.learn-more:hover {
+  color: #333333;
+}
+
+/* Technology Stack Section */
+.tech-stack-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tech-card {
+  background-color: #e6f4ea;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.tech-card h3 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 60px 20px;
+  background-color: #28a745;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  color: #28a745;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 15px; /* Reduced padding for smaller screens */
+    min-height: 350px;
+  }
+
+  .hero-logo-graphic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-logo-text {
+    width: 110px;
+    height: 30px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 10px;
+    min-height: 300px;
+  }
+
+  .hero-logo-graphic {
+    width: 35px;
+    height: 35px;
+  }
+
+  .hero-logo-text {
+    width: 90px;
+    height: 25px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

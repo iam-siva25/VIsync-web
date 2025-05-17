@@ -1,0 +1,293 @@
+/* Footer Styles */
+.footer {
+  background: #E8F5E9; /* Green-50, matches Hero and CTA */
+  padding: 5rem 1rem; /* 80px top/bottom, 16px sides, matches CTA */
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-content.container {
+  max-width: 80rem; /* 1280px, matches Home.css */
+  margin: 0 auto;
+  padding: 0 1rem; /* 0 16px */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem; /* 32px */
+}
+
+/* Company Info */
+.company-info {
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: #2E7D32; /* Green-900, matches .hero-title */
+  margin-bottom: 1rem; /* 16px */
+}
+
+.logo-highlight {
+  color: #4CAF50; /* Green-600, accent */
+}
+
+.footer-description {
+  font-size: 1rem; /* 16px */
+  color: #1B5E20; /* Green-800, matches .cta-content p */
+  margin-bottom: 1.5rem; /* 24px */
+  max-width: 20rem; /* 320px, constrain for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* 16px */
+}
+
+.social-icon {
+  font-size: 1.5rem; /* 24px */
+  color: #4CAF50; /* Green-600, matches .cta-button */
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  color: #2E7D32; /* Green-900, darker on hover */
+  transform: scale(1.2); /* Matches .hero-cta:hover scale */
+}
+
+.social-icon:link,
+.social-icon:visited {
+  color: #4CAF50; /* Override blue link defaults */
+}
+
+/* Quick Links */
+.quick-links {
+  text-align: center;
+}
+
+.footer-heading {
+  font-size: 1.25rem; /* 20px, matches .slide-card h3 */
+  font-weight: 700;
+  color: #2E7D32; /* Green-900, matches .section-title */
+  margin-bottom: 1rem; /* 16px */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.footer-links a {
+  font-size: 1rem; /* 16px */
+  color: #4CAF50; /* Green-600, matches .hero-cta */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #2E7D32; /* Green-900, darker on hover */
+  text-decoration: underline;
+}
+
+.footer-links a:link,
+.footer-links a:visited {
+  color: #4CAF50; /* Override blue link defaults */
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+  background-color: #2E7D32;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* 16px */
+  color: #1B5E20; /* Green-800, matches .footer-description */
+  margin-bottom: 0.75rem; /* 12px */
+}
+
+.contact-icon {
+  font-size: 1.5rem; /* 24px */
+  color: #4CAF50; /* Green-600, matches .social-icon */
+  margin-right: 0.75rem; /* 12px */
+}
+
+/* Newsletter */
+.newsletter {
+  text-align: center;
+}
+
+.newsletter-text {
+  font-size: 1rem; /* 16px */
+  color: #1B5E20; /* Green-800, matches .footer-description */
+  margin-bottom: 1rem; /* 16px */
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem; /* 8px */
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  padding: 0.75rem; /* 12px */
+  font-size: 0.875rem; /* 14px */
+  color: #1B5E20; /* Green-800 */
+  background: #FFFFFF; /* White, matches .cta-button */
+  border: 2px solid #4CAF50; /* Green-600, matches .hero-cta */
+  border-radius: 9999px; /* Fully rounded */
+  width: 100%;
+  max-width: 18rem; /* 288px */
+  outline: none;
+}
+
+.newsletter-input:focus {
+  border-color: #2E7D32; /* Green-900, darker on focus */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3); /* Green-500/30 */
+  outline: 2px solid #4CAF50; /* Override blue browser default */
+}
+
+.newsletter-button {
+  padding: 0.75rem 1.5rem; /* 12px 24px, matches .cta-button */
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+  color: #4CAF50; /* Green-600 */
+  background: #FFFFFF; /* White */
+  border: 2px solid #4CAF50; /* Green-600 */
+  border-radius: 9999px; /* Fully rounded */
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.newsletter-button:hover {
+  background: #E8F5E9; /* Green-50, matches .cta-button:hover */
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3); /* Green-500/30 */
+  transform: scale(1.05); /* Matches .cta-button:hover */
+}
+
+.newsletter-button:focus {
+  outline: 2px solid #4CAF50; /* Green-600, matches Home.css */
+  outline-offset: 2px;
+}
+
+.status-message {
+  font-size: 0.875rem; /* 14px */
+  margin-top: 0.75rem; /* 12px */
+  color: #2E7D32; /* Green-900, success */
+}
+
+.status-message.error {
+  color: #1B5E20; /* Green-800, errors, avoids non-green colors */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* 16px */
+  padding-top: 2rem; /* 32px */
+  border-top: 1px solid rgba(76, 175, 80, 0.2); /* Green-500/20 */
+  margin-top: 2rem; /* 32px */
+}
+
+.copyright-text {
+  font-size: 0.875rem; /* 14px */
+  color: #1B5E20; /* Green-800 */
+}
+
+.legal-links {
+  display: flex;
+  gap: 1rem; /* 16px */
+}
+
+.legal-links a {
+  font-size: 0.875rem; /* 14px */
+  color: #4CAF50; /* Green-600 */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.legal-links a:hover {
+  color: #2E7D32; /* Green-900 */
+  text-decoration: underline;
+}
+
+.legal-links a:link,
+.legal-links a:visited {
+  color: #4CAF50; /* Override blue link defaults */
+}
+
+.legal-links a:focus {
+  outline: 2px solid #4CAF50; /* Green-600 */
+  outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .company-info,
+  .quick-links,
+  .contact-info,
+  .newsletter {
+    text-align: left;
+  }
+  .footer-description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .social-links,
+  .contact-list li {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 3rem 1rem; /* 48px top/bottom, 16px sides, matches Home.css */
+  }
+  .footer-logo {
+    font-size: 1.5rem; /* 24px */
+  }
+  .footer-heading {
+    font-size: 1.125rem; /* 18px */
+  }
+  .newsletter-input,
+  .newsletter-button {
+    padding: 0.5rem 1rem; /* 8px 16px */
+    font-size: 0.875rem; /* 14px */
+  }
+}
+
+/* Accessibility */
+.footer a:focus,
+.footer button:focus,
+.footer input:focus {
+  outline: 2px solid #4CAF50; /* Green-600, override blue defaults */
+  outline-offset: 2px;
+}

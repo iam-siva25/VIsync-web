@@ -1,0 +1,338 @@
+
+/* industryServices.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.industry-services-page {
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+/* Importing Inter font to match Home.css, Footer.css, and AboutUs.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Industry services page container */
+.industry-services-page {
+  position: relative;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.2), rgba(59, 130, 246, 0.1)), url('../assets/Deep-Learning.gif'), url('../assets/Deep-Learning.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fixed background to match Home.css */
+  image-rendering: auto; /* Optimize clarity */
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1280px; /* Matches Home.css container */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Fade-in animation to match Home.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* Hero Section */
+.industry-hero {
+
+  background-color: #28a745;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.industry-services {
+  padding: 60px 20px;
+  background-color: #e6f4ea;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 40px;
+
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.7); /* Semi-transparent for GIF visibility */
+  backdrop-filter: blur(10px); /* Glassmorphism */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  max-width: 64rem;
+  padding: 2rem;
+  background: linear-gradient(90deg, #a5b4fc, #60a5fa); /* Matches Home.css */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Industry Services Section */
+.industry-services {
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.section-title {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #ffffff, #a5b4fc); /* Matches Home.css */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  gap: 2rem;
+}
+
+.service-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+
+}
+
+.service-image {
+  width: 100%;
+
+  height: 200px;
+
+  height: 14rem;
+
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.service-info {
+  padding: 20px;
+
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.1);
+}
+
+.service-info {
+  padding: 1.5rem;
+
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #a5b4fc; /* Matches Home.css headings */
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e5e7eb; /* Matches Home.css text-gray-200 */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-cta {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #7e22ce); /* Matches Home.css buttons */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.service-cta:hover {
+  background: linear-gradient(135deg, #2563eb, #6b21a8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Tech Stack Section */
+.tech-stack-section {
+
+  padding: 60px 20px;
+  background-color: #ffffff;
+
+  padding: 6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+.tech-item {
+  background-color: #e6f4ea;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+
+  gap: 2rem;
+}
+
+.tech-item {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+
+}
+
+.tech-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #a5b4fc;
+  margin-bottom: 1rem;
+}
+
+.tech-item p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .industry-hero {
+    min-height: 50vh;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .services-grid, .tech-stack-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .service-image {
+    height: 12rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .service-title, .tech-item h3 {
+    font-size: 1.25rem;
+  }
+
+  .service-cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .industry-services-page {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .industry-hero, .industry-services, .tech-stack-section {
+    padding: 4rem 1rem;
+  }
+
+  .service-description, .tech-item p {
+    font-size: 0.875rem;
+  }
+
+  .service-image {
+    height: 10rem;
+  }
+}
